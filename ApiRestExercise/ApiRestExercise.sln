@@ -33,6 +33,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CrossCutting", "CrossCuttin
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleClient", "ConsoleClient\ConsoleClient.csproj", "{B181183B-7DB2-456A-BFF5-28457431C68C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Data.Test", "Data.Test\Data.Test.csproj", "{AC5D9E76-BEC4-4EE9-901E-E3373F944D40}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -75,6 +77,10 @@ Global
 		{B181183B-7DB2-456A-BFF5-28457431C68C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B181183B-7DB2-456A-BFF5-28457431C68C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B181183B-7DB2-456A-BFF5-28457431C68C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AC5D9E76-BEC4-4EE9-901E-E3373F944D40}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC5D9E76-BEC4-4EE9-901E-E3373F944D40}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC5D9E76-BEC4-4EE9-901E-E3373F944D40}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC5D9E76-BEC4-4EE9-901E-E3373F944D40}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -92,5 +98,6 @@ Global
 		{332B95AF-B691-40B8-A679-B8ED6FFE9882} = {B804E54A-726A-436D-B9A0-0F68CA74267B}
 		{9D2F7B0B-E504-4C27-9A09-490245588A88} = {B804E54A-726A-436D-B9A0-0F68CA74267B}
 		{B181183B-7DB2-456A-BFF5-28457431C68C} = {08CC640D-AFC1-4DB1-A276-A7392242C772}
+		{AC5D9E76-BEC4-4EE9-901E-E3373F944D40} = {B804E54A-726A-436D-B9A0-0F68CA74267B}
 	EndGlobalSection
 EndGlobal

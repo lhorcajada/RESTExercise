@@ -4,9 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Data
+namespace DomainCore.Repository
 {
-    public class Class1
+    public interface IUnitOfWork
     {
+        int Commit();
+        Task<int> CommitAsync();
+
     }
 }
