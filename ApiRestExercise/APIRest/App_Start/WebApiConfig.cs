@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web.Http;
+﻿using System.Web.Http;
 
 namespace APIRest
 {
@@ -10,7 +7,7 @@ namespace APIRest
         public static void Register(HttpConfiguration config)
         {
             // Web API configuration and services
-
+            AutofacContainerConfig.Configure();
             // Web API routes
             config.MapHttpAttributeRoutes();
 

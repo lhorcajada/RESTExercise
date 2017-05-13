@@ -77,5 +77,41 @@ namespace CrossCutting.Resources {
                 return ResourceManager.GetString("ErrorUserNameValidated", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to El contenedor de dependencias no ha creado el objeto..
+        /// </summary>
+        public static string ExceptionNullObject {
+            get {
+                return ResourceManager.GetString("ExceptionNullObject", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to El usuario debe ser mayor de 18 años..
+        /// </summary>
+        public static string ExceptionUserMustBeLegalAge {
+            get {
+                return ResourceManager.GetString("ExceptionUserMustBeLegalAge", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to El nombre de usuario ya existe..
+        /// </summary>
+        public static string ExceptionUserNameNoRepeat {
+            get {
+                return ResourceManager.GetString("ExceptionUserNameNoRepeat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Usuario no encontrado con ese código..
+        /// </summary>
+        public static string ExceptionUserNotFound {
+            get {
+                return ResourceManager.GetString("ExceptionUserNotFound", resourceCulture);
+            }
+        }
     }
 }

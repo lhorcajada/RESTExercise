@@ -40,13 +40,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="Logic\UserLogic\IUserLogic.cs" />
+    <Compile Include="Logic\UserLogic\IUserRule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\IRepository.cs" />
     <Compile Include="Repository\IUnitOfWork.cs" />
     <Compile Include="Repository\IUserRepository.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\ApplicationCore\ApplicationCore.csproj">
+      <Project>{83DA27C3-F4F0-435C-A5CE-3F312028EB4B}</Project>
+      <Name>ApplicationCore</Name>
+    </ProjectReference>
     <ProjectReference Include="..\DomainEntities\DomainEntities.csproj">
       <Project>{FECD4E48-E67D-461E-B2E3-FCB2BE1D0521}</Project>
       <Name>DomainEntities</Name>

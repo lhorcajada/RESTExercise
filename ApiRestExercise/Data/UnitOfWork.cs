@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace Data
 {
     /// <summary>
-    /// 
+    /// Clase que se encarga de agrupar las tareas de persistencia en una única transacción.
     /// </summary>
     public class UnitOfWork: IUnitOfWork, IDisposable
     {
