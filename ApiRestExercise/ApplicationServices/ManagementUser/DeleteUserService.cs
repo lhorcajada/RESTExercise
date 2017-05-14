@@ -1,10 +1,7 @@
 ﻿using System.Threading.Tasks;
-using ApplicationCore.DTOs;
 using DomainCore.Repository;
 using DomainCore.Logic.UserLogic;
-using ApplicationServices.ManagemenUser;
 using ApplicationCore.Contracts.UserContracts;
-using DomainLogic.Logic.UserLogic;
 using System.Linq;
 using System;
 using CrossCutting.Resources;

@@ -3,7 +3,7 @@ using DomainEntities;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace ApplicationServices.ManagemenUser
+namespace ApplicationServices.ManagementUser
 {
     public class MapperUser
     { 

@@ -1,28 +1,26 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.Threading.Tasks;
 using ApplicationCore.DTOs;
 using DomainCore.Repository;
 using DomainCore.Logic.UserLogic;
-using ApplicationServices.ManagemenUser;
-using ApplicationCore.Contracts.UserContracts;
-using DomainLogic.Logic.UserLogic;
-using System;
 using CrossCutting.Resources;
+using ApplicationCore.Contracts.UserContracts;
 
 namespace ApplicationServices.ManagementUser
 {
     /// <summary>
     /// Servicio que orquesta las acciones para mantener un usuario.
     /// </summary>
-    public class UpdateUserService : IUpdateUserService
+    public class AddUserService : IAddUserService
     {
 
         private readonly IUnitOfWork _uow;
         private readonly IUserRepository _userRepository;
-        private readonly IUpdateUserLogic _userLogic;
-        public UpdateUserService(
+        private readonly IAddUserLogic _userLogic;
+        public AddUserService(
             IUnitOfWork uow,
             IUserRepository userRepository,
-            IUpdateUserLogic userLogic
+            IAddUserLogic userLogic
             )
         {
             if (uow == null || userRepository == null || userLogic == null)
@@ -32,12 +30,12 @@ namespace ApplicationServices.ManagementUser
             _userLogic = userLogic;
         }
 
-        public async Task UpdateUser(UserDto userDto)
+        public async Task AddUser(UserDto userDto)
         {
-            var userAll =  _userRepository.GetAllWithTracking();
-            _userLogic.ValidationsToUpdate(userAll, userDto);
+            var userAll =  _userRepository.GetAll();
+            _userLogic.ValidationsToAdd(userAll, userDto);
             var user = MapperUser.MapFromDtoToEntity(userDto);
-            _userRepository.Update(user);
+            _userRepository.Add(user);
             await _uow.CommitAsync();
         }
     }

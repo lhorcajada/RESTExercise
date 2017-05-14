@@ -49,11 +49,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ManagemenUser\GetUserService.cs" />
-    <Compile Include="ManagemenUser\DeleteUserService.cs" />
-    <Compile Include="ManagemenUser\UpdateUserService.cs" />
-    <Compile Include="ManagemenUser\MapperUser.cs" />
-    <Compile Include="ManagemenUser\AddUserService.cs" />
+    <Compile Include="ManagementUser\GetUserService.cs" />
+    <Compile Include="ManagementUser\DeleteUserService.cs" />
+    <Compile Include="ManagementUser\UpdateUserService.cs" />
+    <Compile Include="ManagementUser\MapperUser.cs" />
+    <Compile Include="ManagementUser\AddUserService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

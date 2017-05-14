@@ -1,9 +1,7 @@
 namespace Data.Model
 {
     using DomainEntities;
-    using System;
     using System.Data.Entity;
-    using System.Linq;
     /// <summary>
     /// Contexto de datos de EntityFrameWork
     /// </summary>

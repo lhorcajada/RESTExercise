@@ -2,11 +2,8 @@
 using ApplicationCore.DTOs;
 using DomainCore.Repository;
 using DomainCore.Logic.UserLogic;
-using ApplicationServices.ManagemenUser;
 using ApplicationCore.Contracts.UserContracts;
-using System.Linq;
 using System.Data.Entity;
-using DomainLogic.Logic.UserLogic;
 using System;
 using System.Collections.Generic;
 using CrossCutting.Resources;

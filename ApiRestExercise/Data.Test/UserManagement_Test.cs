@@ -9,7 +9,7 @@ using System.Linq;
 namespace Data.Test
 {
     [TestClass]
-    public class UnitTest1
+    public class UserManagement_Test
     {
         IDataFactory _dataFactory;
         IUnitOfWork _uow;

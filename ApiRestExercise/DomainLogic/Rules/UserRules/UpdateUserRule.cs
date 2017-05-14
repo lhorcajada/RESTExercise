@@ -3,11 +3,7 @@ using CrossCutting.Exceptions;
 using CrossCutting.Resources;
 using DomainCore.Logic.UserLogic;
 using DomainEntities;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DomainLogic.Rules.UserRules
 {

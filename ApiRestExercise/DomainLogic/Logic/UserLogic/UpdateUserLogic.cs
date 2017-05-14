@@ -3,7 +3,6 @@ using System.Linq;
 using ApplicationCore.DTOs;
 using DomainCore.Logic.UserLogic;
 using DomainEntities;
-using DomainLogic.Logic.UserLogic;
 using CrossCutting.Resources;
 
 namespace DomainLogic.Logic.UserLogic
