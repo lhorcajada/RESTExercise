@@ -5,18 +5,31 @@ using DomainCore.Logic.UserLogic;
 using ApplicationServices.ManagemenUser;
 using ApplicationCore.Contracts.UserContracts;
 using DomainLogic.Logic.UserLogic;
+using System;
+using CrossCutting.Resources;
 
 namespace ApplicationServices.ManagementUser
 {
     /// <summary>
     /// Servicio que orquesta las acciones para mantener un usuario.
     /// </summary>
-    public class UpdateUserService : UserBaseService, IUpdateUserService
+    public class UpdateUserService : IUpdateUserService
     {
-   
-        public UpdateUserService(IUnitOfWork uow, IUserRepository userRepository, IUserLogic updateUserLogic) 
-            : base(uow, userRepository, updateUserLogic)
+
+        private readonly IUnitOfWork _uow;
+        private readonly IUserRepository _userRepository;
+        private readonly IUpdateUserLogic _userLogic;
+        public UpdateUserService(
+            IUnitOfWork uow,
+            IUserRepository userRepository,
+            IUpdateUserLogic userLogic
+            )
         {
+            if (uow == null || userRepository == null || userLogic == null)
+                throw new ArgumentNullException(Resource.ExceptionNullObject);
+            _uow = uow;
+            _userRepository = userRepository;
+            _userLogic = userLogic;
         }
 
         public async Task UpdateUser(UserDto userDto)

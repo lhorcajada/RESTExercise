@@ -18,12 +18,23 @@ namespace ApplicationServices.ManagementUser
     /// <summary>
     /// Servicio que orquesta las acciones para mantener un usuario.
     /// </summary>
-    public class AddUserService : UserBaseService, IAddUserService
+    public class AddUserService : IAddUserService
     {
-   
-        public AddUserService(IUnitOfWork uow, IUserRepository userRepository, IUserLogic addUserLogic) 
-            : base(uow, userRepository, addUserLogic)
+
+        private readonly IUnitOfWork _uow;
+        private readonly IUserRepository _userRepository;
+        private readonly IAddUserLogic _userLogic;
+        public AddUserService(
+            IUnitOfWork uow,
+            IUserRepository userRepository,
+            IAddUserLogic userLogic
+            )
         {
+            if (uow == null || userRepository == null || userLogic == null)
+                throw new ArgumentNullException(Resource.ExceptionNullObject);
+            _uow = uow;
+            _userRepository = userRepository;
+            _userLogic = userLogic;
         }
 
         public async Task AddUser(UserDto userDto)

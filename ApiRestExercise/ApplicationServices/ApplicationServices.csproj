@@ -53,7 +53,6 @@
     <Compile Include="ManagemenUser\DeleteUserService.cs" />
     <Compile Include="ManagemenUser\UpdateUserService.cs" />
     <Compile Include="ManagemenUser\MapperUser.cs" />
-    <Compile Include="ManagemenUser\UserBaseService.cs" />
     <Compile Include="ManagemenUser\AddUserService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

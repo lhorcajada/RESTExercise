@@ -14,9 +14,9 @@ namespace DomainLogicTest
     [TestClass]
     public class UserTest
     {
-        IUserRule updateUserRule;
-        IUserLogic getUserLogic;
-        IUserLogic updateUserlogic;
+        IUpdateUserRule updateUserRule;
+        IGetUserLogic getUserLogic;
+        IUpdateUserLogic updateUserlogic;
         List<User> userAll;
         [TestInitialize]
         public void Initialized()

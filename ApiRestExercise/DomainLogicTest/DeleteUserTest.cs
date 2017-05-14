@@ -15,17 +15,15 @@ namespace DomainLogicTest
     [TestClass]
     public class DeleteUserTest
     {
-        IUserRule updateUserRule;
-        IUserLogic getUserLogic;
-        IUserLogic deleteUserlogic;
+        IGetUserLogic getUserLogic;
+        IDeleteUserLogic deleteUserlogic;
         List<User> userAll;
 
         [TestInitialize]
         public void Initialize()
         {
-            updateUserRule = new UpdateUserRule();
             getUserLogic = new GetUserLogic();
-            deleteUserlogic = new UpdateUserLogic(updateUserRule, getUserLogic);
+            deleteUserlogic = new DeleteUserLogic(getUserLogic);
             userAll = GetAllUsersFictitius();
 
         }
@@ -40,7 +38,7 @@ namespace DomainLogicTest
                 BirthDate = new DateTime(1998, 11, 12)
 
             };
-            deleteUserlogic.ValidationsToDelete(userAll.AsQueryable(), userToUpdate);
+            deleteUserlogic.ValidationsToDelete(userAll.AsQueryable(), userToUpdate.Id);
             bool hasError = false;
             Assert.IsTrue(hasError == false);
         }

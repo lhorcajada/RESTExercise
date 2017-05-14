@@ -48,7 +48,6 @@
     <Compile Include="Logic\UserLogic\UpdateUserLogic.cs" />
     <Compile Include="Logic\UserLogic\AddUserLogic.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Logic\UserLogic\UserBaseLogic.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ApplicationCore\ApplicationCore.csproj">

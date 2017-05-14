@@ -9,19 +9,32 @@ using System.Data.Entity;
 using DomainLogic.Logic.UserLogic;
 using System;
 using System.Collections.Generic;
+using CrossCutting.Resources;
 
 namespace ApplicationServices.ManagementUser
 {
     /// <summary>
     /// Servicio que orquesta las acciones para mantener un usuario.
     /// </summary>
-    public class GetUserService : UserBaseService, IGetUserService
+    public class GetUserService : IGetUserService
     {
-   
-        public GetUserService(IUnitOfWork uow, IUserRepository userRepository, IUserLogic getUserLogic) 
-            : base(uow, userRepository, getUserLogic)
+
+        private readonly IUnitOfWork _uow;
+        private readonly IUserRepository _userRepository;
+        private readonly IGetUserLogic _userLogic;
+        public GetUserService(
+            IUnitOfWork uow,
+            IUserRepository userRepository,
+            IGetUserLogic userLogic
+            )
         {
+            if (uow == null || userRepository == null || userLogic == null)
+                throw new ArgumentNullException(Resource.ExceptionNullObject);
+            _uow = uow;
+            _userRepository = userRepository;
+            _userLogic = userLogic;
         }
+
 
         public async Task<IEnumerable<UserDto>> GetUserAll()
         {

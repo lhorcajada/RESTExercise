@@ -8,9 +8,11 @@ using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web.Http;
+using System.Web.Http.Results;
 
 namespace APIRest.Controllers
 {
+    [RoutePrefix("api/user")]
     public class UserController : ApiController
     {
         private readonly IAddUserService _addUserService;
@@ -31,37 +33,64 @@ namespace APIRest.Controllers
             _getUserService = getUserService;
         }
         // GET: api/User
-        public async Task<IEnumerable<UserDto>> Get()
+        public async Task<IHttpActionResult> Get()
         {
-            return await _getUserService.GetUserAll();
+            var userAll= await _getUserService.GetUserAll();
+            if(userAll != null && userAll.Count() > 0)
+            {
+                return Ok(userAll);
+            }
+            else
+            {
+                return NotFound();
+            }
         }
 
         // GET: api/User/5
         [ExceptionsHandler]
-        public async Task<UserDto> Get(int id)
+        [Route("{id}", Name = "GetById")]
+        public async Task<IHttpActionResult> Get(int id)
         {
-            return await _getUserService.GetUserById(id);
+            var user = await _getUserService.GetUserById(id);
+            if(user != null)
+            {
+                return Ok(user);
+            }
+            else
+            {
+                return NotFound();
+            }
         }
 
         // POST: api/User
         [ExceptionsHandler]
-        public async Task Post([FromBody]UserDto user)
+        [Route("")]
+        public async Task<IHttpActionResult> Post([FromBody]UserDto user)
         {
             await _addUserService.AddUser(user);
+            var userAll = await _getUserService.GetUserAll();
+            var lastUser = userAll.Last();
+            return CreatedAtRoute("GetById", new { id = lastUser.Id }, lastUser);
         }
 
         // PUT: api/User/5
         [ExceptionsHandler]
-        public async Task Put(int id, [FromBody]UserDto user)
+        [Route("{id}")]
+        public async Task<IHttpActionResult> Put(int id, [FromBody]UserDto user)
         {
             await _updateUserService.UpdateUser(user);
+            var userAll = await _getUserService.GetUserAll();
+            var lastUser = userAll.Last();
+            return new StatusCodeResult(HttpStatusCode.NoContent, this);
         }
 
         // DELETE: api/User/5
         [ExceptionsHandler]
-        public async Task Delete([FromBody]UserDto user)
+        [Route("{id}")]
+        public async Task<IHttpActionResult> Delete(int id)
         {
-            await _deleteUserService.DeleteUser(user);
+            await _deleteUserService.DeleteUser(id);
+            return new StatusCodeResult(HttpStatusCode.NoContent, this);
         }
     }
 }

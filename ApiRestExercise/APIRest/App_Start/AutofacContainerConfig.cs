@@ -23,7 +23,7 @@ namespace APIRest
                 typeof(AddUserService).Assembly,
                 typeof(UserRepository).Assembly,
                 typeof(AddUserLogic).Assembly,
-                typeof(IUserLogic).Assembly,
+                typeof(IAddUserLogic).Assembly,
                 typeof(IUnitOfWork).Assembly,
                 typeof(DataFactory).Assembly,
                 typeof(BusinessException).Assembly,
@@ -32,7 +32,6 @@ namespace APIRest
             builder.RegisterAssemblyTypes(assemblies)
               .AsImplementedInterfaces()
               .InstancePerRequest();
-
             //register web api controllers
             builder.RegisterApiControllers(Assembly.GetExecutingAssembly());
 

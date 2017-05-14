@@ -5,25 +5,40 @@ using DomainCore.Logic.UserLogic;
 using ApplicationServices.ManagemenUser;
 using ApplicationCore.Contracts.UserContracts;
 using DomainLogic.Logic.UserLogic;
+using System.Linq;
+using System;
+using CrossCutting.Resources;
 
 namespace ApplicationServices.ManagementUser
 {
     /// <summary>
     /// Servicio que orquesta las acciones para mantener un usuario.
     /// </summary>
-    public class DeleteUserService : UserBaseService, IDeleteUserService
+    public class DeleteUserService : IDeleteUserService
     {
-   
-        public DeleteUserService(IUnitOfWork uow, IUserRepository userRepository, IUserLogic getUserLogic) 
-            : base(uow, userRepository, getUserLogic)
+        private readonly IUnitOfWork _uow;
+        private readonly IUserRepository _userRepository;
+        private readonly IDeleteUserLogic _userLogic;
+        public DeleteUserService(
+            IUnitOfWork uow,
+            IUserRepository userRepository,
+            IDeleteUserLogic userLogic
+            )
         {
+            if (uow == null || userRepository == null || userLogic == null)
+                throw new ArgumentNullException(Resource.ExceptionNullObject);
+            _uow = uow;
+            _userRepository = userRepository;
+            _userLogic = userLogic;
         }
 
-        public async Task DeleteUser(UserDto deleteUser)
+
+
+        public async Task DeleteUser(int id)
         {
             var userAll =  _userRepository.GetAllWithTracking();
-            _userLogic.ValidationsToDelete(userAll, deleteUser);
-            var user = MapperUser.MapFromDtoToEntity(deleteUser);
+            var user = _userLogic.ValidationsToDelete(userAll, id).FirstOrDefault();
+            
             _userRepository.Delete(user);
             await _uow.CommitAsync();
         }

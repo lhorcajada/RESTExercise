@@ -12,9 +12,9 @@ namespace ApplicationCore.Contracts.UserContracts
         /// <summary>
         /// Servicio que se encarga de orquestar la acción de eliminar un usuario
         /// </summary>
-        /// <param name="user">Identificador del usuario</param>
+        /// <param name="id">Identificador del usuario</param>
         /// <returns></returns>
-        Task DeleteUser(UserDto userDto);
+        Task DeleteUser(int id);
         
     }
 }

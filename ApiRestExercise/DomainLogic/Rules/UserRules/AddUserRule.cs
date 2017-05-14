@@ -14,7 +14,7 @@ namespace DomainLogic.Rules.UserRules
     /// <summary>
     /// Maneja las reglas que se deben cumplir para añadir un usuario en base de datos.
     /// </summary>
-    public class AddUserRule : UserBaseRule, IUserRule
+    public class AddUserRule : UserBaseRule, IAddUserRule
     {
         public override void ApplyRules(IQueryable<User> userAll, UserDto userToAdd)
         {

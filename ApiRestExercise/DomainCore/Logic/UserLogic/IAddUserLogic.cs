@@ -1,0 +1,21 @@
+﻿using ApplicationCore.DTOs;
+using DomainEntities;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace DomainCore.Logic.UserLogic
+{
+    public interface IAddUserLogic
+    {
+        /// <summary>
+        /// Lógica para añadir un usuario en base de datos
+        /// </summary>
+        /// <param name="userAll">Query sin tracking para obtener todos los usuarios</param>
+        /// <param name="userDto">Objeto del usuario que se quiere dar de alta en base de datos</param>
+        void ValidationsToAdd(IQueryable<User> userAll, UserDto userDto);
+
+    }
+}
