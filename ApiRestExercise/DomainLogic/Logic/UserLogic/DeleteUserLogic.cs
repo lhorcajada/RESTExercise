@@ -13,6 +13,10 @@ namespace DomainLogic.Logic.UserLogic
     public class DeleteUserLogic : IDeleteUserLogic
     {
         public readonly IGetUserLogic _getUserLogic;
+        /// <summary>
+        /// Contructor que establece el objeto que maneja la obtención del usuario a eliminar.
+        /// </summary>
+        /// <param name="getUserLogic"></param>
         public DeleteUserLogic(IGetUserLogic getUserLogic)
         {
             if (getUserLogic == null)
@@ -20,8 +24,13 @@ namespace DomainLogic.Logic.UserLogic
             _getUserLogic = getUserLogic;
 
         }
-
-        public IQueryable<User> ValidationsToDelete(IQueryable<User> userAll, int id)
+        /// <summary>
+        /// Orquesta la lógica para eliminar un usuario
+        /// </summary>
+        /// <param name="userAll"></param>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public IQueryable<User> LogicToDelete(IQueryable<User> userAll, int id)
         {
             return _getUserLogic.QueryToGetUserById(userAll, id);
         }

@@ -29,11 +29,15 @@ namespace ApplicationServices.ManagementUser
             _userRepository = userRepository;
             _userLogic = userLogic;
         }
-
+        /// <summary>
+        /// Orquesta todos los trabajos necesarios para actualizar un usuario en base de datos.
+        /// </summary>
+        /// <param name="userDto">Datos usuario a actualizar</param>
+        /// <returns></returns>
         public async Task UpdateUser(UserDto userDto)
         {
             var userAll =  _userRepository.GetAllWithTracking();
-            _userLogic.ValidationsToUpdate(userAll, userDto);
+            _userLogic.LogicToUpdate(userAll, userDto);
             var user = MapperUser.MapFromDtoToEntity(userDto);
             _userRepository.Update(user);
             await _uow.CommitAsync();

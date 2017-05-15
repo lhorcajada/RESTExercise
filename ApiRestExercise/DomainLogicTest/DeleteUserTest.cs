@@ -39,7 +39,7 @@ namespace DomainLogicTest
                 BirthDate = new DateTime(1998, 11, 12)
 
             };
-            deleteUserlogic.ValidationsToDelete(userAll.AsQueryable(), userToUpdate.Id);
+            deleteUserlogic.LogicToDelete(userAll.AsQueryable(), userToUpdate.Id);
             bool hasError = false;
             Assert.IsTrue(hasError == false);
         }

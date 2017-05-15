@@ -9,6 +9,11 @@ namespace DomainLogic.Rules.UserRules
 {
     public abstract class UserBaseRule
     {
+        /// <summary>
+        /// Aplica las reglas antes de realizar cualquier acción sobre el usuario en base de datos 
+        /// </summary>
+        /// <param name="userAll">Queryable con la query que obtiene todos los usuarios</param>
+        /// <param name="user">Usuario sobre el que se aplican las reglas.</param>
         public abstract void ApplyRules(IQueryable<User> userAll, UserDto user);
    
 

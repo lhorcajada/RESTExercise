@@ -16,7 +16,7 @@ namespace DomainCore.Logic.UserLogic
         /// Validaciones para obtener un usuario por id.
         /// </summary>
         /// <param name="userFinded"></param>
-        void ValidationsToGetById(User userFinded);
+        void ValidateIfUserFoundIsNull(User userFinded);
 
     }
 }

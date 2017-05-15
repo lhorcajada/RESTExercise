@@ -11,7 +11,7 @@ namespace DomainCore.Logic.UserLogic
         /// </summary>
         /// <param name="userAll">Query con tracking para obtener todos los usuarios</param>
         /// <param name="user">Objeto del usuario que se quiere actualizar en base de datos</param>
-        IQueryable<User> ValidationsToUpdate(IQueryable<User> userAll, UserDto user);
+        IQueryable<User> LogicToUpdate(IQueryable<User> userAll, UserDto user);
 
 
 

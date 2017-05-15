@@ -35,13 +35,17 @@ namespace ApplicationServices.ManagementUser
             var userAll = await _userRepository.GetAll().ToListAsync();
             return MapperUser.MapFromEntityListToDtoList(userAll);
         }
-
+        /// <summary>
+        /// Orquesta todos los trabajos necesarios para obtener un usuario en base de datos.
+        /// </summary>
+        /// <param name="id">Identificador del usuario que se pretende obtener</param>
+        /// <returns></returns>
         public async Task<UserDto> GetUserById(int id)
         {
             var userAll =  _userRepository.GetAllWithTracking();
-            var userFinded = await _userLogic.QueryToGetUserById(userAll, id).FirstOrDefaultAsync();
-            _userLogic.ValidationsToGetById(userFinded);
-            return MapperUser.MapFromEntityToDto(userFinded);
+            var userFound = await _userLogic.QueryToGetUserById(userAll, id).FirstOrDefaultAsync();
+            _userLogic.ValidateIfUserFoundIsNull(userFound);
+            return MapperUser.MapFromEntityToDto(userFound);
         }
       
     }

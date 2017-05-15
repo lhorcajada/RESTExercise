@@ -11,7 +11,10 @@ namespace Data
     {
         private ExerciseContext _context;
 
-
+        /// <summary>
+        /// Método que crea el contexto de datos. Si ya existe devuelve el existente.
+        /// </summary>
+        /// <returns>Devuelve el contexto de datos.</returns>
         public ExerciseContext GetContext()
         {
             return _context ?? (_context = new ExerciseContext());

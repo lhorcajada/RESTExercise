@@ -30,11 +30,15 @@ namespace ApplicationServices.ManagementUser
         }
 
 
-
+        /// <summary>
+        /// Orquesta todos los trabajos necesarios para eliminar un usuario en base de datos.
+        /// </summary>
+        /// <param name="id">Identificador del usuario que se pretende eliminar</param>
+        /// <returns></returns>
         public async Task DeleteUser(int id)
         {
             var userAll =  _userRepository.GetAllWithTracking();
-            var user = _userLogic.ValidationsToDelete(userAll, id).FirstOrDefault();
+            var user = _userLogic.LogicToDelete(userAll, id).FirstOrDefault();
             
             _userRepository.Delete(user);
             await _uow.CommitAsync();

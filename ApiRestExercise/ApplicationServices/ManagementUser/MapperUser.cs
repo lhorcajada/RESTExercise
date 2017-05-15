@@ -5,8 +5,16 @@ using System.Linq;
 
 namespace ApplicationServices.ManagementUser
 {
+    /// <summary>
+    /// Clase que se encarga de los mapeos entre entidades y dtos.
+    /// </summary>
     public class MapperUser
     { 
+        /// <summary>
+        /// Mapea un objeto DTO a un nuevo objeto entidad
+        /// </summary>
+        /// <param name="userDto">Objeto DTO a mapear</param>
+        /// <returns></returns>
         public static User MapFromDtoToEntity(UserDto userDto)
         {
             return new User
@@ -16,6 +24,11 @@ namespace ApplicationServices.ManagementUser
                 BirthDate = userDto.BirthDate
             };
         }
+        /// <summary>
+        /// Mapea un objeto entidad a un nuevo objeto DTO
+        /// </summary>
+        /// <param name="user">Objeto entidad de usuario a mapear.</param>
+        /// <returns></returns>
         public static UserDto MapFromEntityToDto(User user)
         {
             return new UserDto
@@ -26,7 +39,11 @@ namespace ApplicationServices.ManagementUser
 
             };
         }
-
+        /// <summary>
+        /// Mapea un listado de entidades a un listado de DTOs.
+        /// </summary>
+        /// <param name="userAll">Listado de entidades a mapear.</param>
+        /// <returns></returns>
         internal static IEnumerable<UserDto> MapFromEntityListToDtoList(List<User> userAll)
         {
             List<UserDto> usersDto = new List<UserDto>();

@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace CrossCutting.Exceptions
 {
+    /// <summary>
+    /// Clase de tipo Exception que se utiliza para las excepciones manejadas.
+    /// </summary>
     public class BusinessException : Exception
     {
         public BusinessException()

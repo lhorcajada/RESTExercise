@@ -29,11 +29,15 @@ namespace ApplicationServices.ManagementUser
             _userRepository = userRepository;
             _userLogic = userLogic;
         }
-
+        /// <summary>
+        /// Orquesta todos los trabajos necesarios para añadir un usuario en base de datos.
+        /// </summary>
+        /// <param name="userDto">Objeto usuario que se va a añadir</param>
+        /// <returns></returns>
         public async Task AddUser(UserDto userDto)
         {
             var userAll =  _userRepository.GetAll();
-            _userLogic.ValidationsToAdd(userAll, userDto);
+            _userLogic.LogicToAdd(userAll, userDto);
             var user = MapperUser.MapFromDtoToEntity(userDto);
             _userRepository.Add(user);
             await _uow.CommitAsync();

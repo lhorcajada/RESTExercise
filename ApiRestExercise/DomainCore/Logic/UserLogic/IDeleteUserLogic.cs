@@ -10,6 +10,6 @@ namespace DomainCore.Logic.UserLogic
         /// </summary>
         /// <param name="userAll">Query con tracking par obtener todos los usuarios</param>
         /// <param name="id">identificador</param>
-        IQueryable<User> ValidationsToDelete(IQueryable<User> userAll, int id);
+        IQueryable<User> LogicToDelete(IQueryable<User> userAll, int id);
     }
 }

@@ -38,7 +38,7 @@ namespace DomainLogicTest
                 BirthDate = new DateTime(1995, 11, 12)
 
             };
-            addUserLogic.ValidationsToAdd(userAll.AsQueryable(), userToAdd);
+            addUserLogic.LogicToAdd(userAll.AsQueryable(), userToAdd);
             bool hasError = false;
             Assert.IsTrue(hasError == false);
         }
@@ -56,7 +56,7 @@ namespace DomainLogicTest
                 BirthDate = new DateTime(2016, 11, 12)
 
             };
-            addUserLogic.ValidationsToAdd(userAll.AsQueryable(), userToAdd);
+            addUserLogic.LogicToAdd(userAll.AsQueryable(), userToAdd);
         }
         [TestMethod]
         [ExpectedException(typeof(BusinessException), "El nombre de usuario ya existe.")]
@@ -69,7 +69,7 @@ namespace DomainLogicTest
                 BirthDate = new DateTime(1945, 5, 6)
 
             };
-            addUserLogic.ValidationsToAdd(userAll.AsQueryable(), userToAdd);
+            addUserLogic.LogicToAdd(userAll.AsQueryable(), userToAdd);
         }
 
     
