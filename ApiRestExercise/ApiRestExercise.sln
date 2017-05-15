@@ -39,6 +39,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DomainLogicTest", "DomainLo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApplicationServiceTest", "ApplicationServiceTest\ApplicationServiceTest.csproj", "{87682982-69DC-4A8F-8634-9DFB8A520CAC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "APIRestTest", "APIRestTest\APIRestTest.csproj", "{092B1BE1-B0D0-44A8-9A2D-6F39EA3DBFE1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -93,6 +95,10 @@ Global
 		{87682982-69DC-4A8F-8634-9DFB8A520CAC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{87682982-69DC-4A8F-8634-9DFB8A520CAC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{87682982-69DC-4A8F-8634-9DFB8A520CAC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{092B1BE1-B0D0-44A8-9A2D-6F39EA3DBFE1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{092B1BE1-B0D0-44A8-9A2D-6F39EA3DBFE1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{092B1BE1-B0D0-44A8-9A2D-6F39EA3DBFE1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{092B1BE1-B0D0-44A8-9A2D-6F39EA3DBFE1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -113,5 +119,6 @@ Global
 		{AC5D9E76-BEC4-4EE9-901E-E3373F944D40} = {B804E54A-726A-436D-B9A0-0F68CA74267B}
 		{4F5460CC-1CDB-4573-A732-52F674690430} = {DD4359CA-3B8C-4F47-8318-0526C496D22C}
 		{87682982-69DC-4A8F-8634-9DFB8A520CAC} = {E9171918-C389-40E7-90E3-3BD036DA8A97}
+		{092B1BE1-B0D0-44A8-9A2D-6F39EA3DBFE1} = {08CC640D-AFC1-4DB1-A276-A7392242C772}
 	EndGlobalSection
 EndGlobal

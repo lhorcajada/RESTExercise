@@ -1,6 +1,7 @@
 ﻿using APIRest.Exceptions;
 using ApplicationCore.Contracts.UserContracts;
 using ApplicationCore.DTOs;
+using CrossCutting.Exceptions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,7 +20,7 @@ namespace APIRest.Controllers
         private readonly IUpdateUserService _updateUserService;
         private readonly IDeleteUserService _deleteUserService;
         private readonly IGetUserService _getUserService;
-        
+
         public UserController(
             IAddUserService addUserService,
             IUpdateUserService updateUserService,
@@ -35,8 +36,8 @@ namespace APIRest.Controllers
         // GET: api/User
         public async Task<IHttpActionResult> Get()
         {
-            var userAll= await _getUserService.GetUserAll();
-            if(userAll != null && userAll.Count() > 0)
+            var userAll = await _getUserService.GetUserAll();
+            if (userAll != null && userAll.Count() > 0)
             {
                 return Ok(userAll);
             }
@@ -49,17 +50,15 @@ namespace APIRest.Controllers
         // GET: api/User/5
         [ExceptionsHandler]
         [Route("{id}", Name = "GetById")]
+
         public async Task<IHttpActionResult> Get(int id)
         {
-            var user = await _getUserService.GetUserById(id);
-            if(user != null)
-            {
-                return Ok(user);
-            }
-            else
-            {
-                return NotFound();
-            }
+            UserDto user;
+            user = await _getUserService.GetUserById(id);
+            return Ok(user);
+            //return NotFound();
+
+
         }
 
         // POST: api/User
@@ -81,7 +80,7 @@ namespace APIRest.Controllers
             await _updateUserService.UpdateUser(user);
             var userAll = await _getUserService.GetUserAll();
             var lastUser = userAll.Last();
-            return new StatusCodeResult(HttpStatusCode.NoContent, this);
+            return Ok(user);
         }
 
         // DELETE: api/User/5
@@ -90,7 +89,7 @@ namespace APIRest.Controllers
         public async Task<IHttpActionResult> Delete(int id)
         {
             await _deleteUserService.DeleteUser(id);
-            return new StatusCodeResult(HttpStatusCode.NoContent, this);
+            return Ok(id);
         }
     }
 }

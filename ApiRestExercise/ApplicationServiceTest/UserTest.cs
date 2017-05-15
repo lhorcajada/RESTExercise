@@ -34,7 +34,6 @@ namespace ApplicationServiceTest
         IDeleteUserService _deleteUserService;
         IGetUserService _getUserService;
         UserDto _userToAdd;
-        UserDto _userToUpdate;
 
         [TestInitialize]
         public void Initialize()
