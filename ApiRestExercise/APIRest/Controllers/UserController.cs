@@ -37,14 +37,7 @@ namespace APIRest.Controllers
         public async Task<IHttpActionResult> Get()
         {
             var userAll = await _getUserService.GetUserAll();
-            if (userAll != null && userAll.Count() > 0)
-            {
-                return Ok(userAll);
-            }
-            else
-            {
-                return NotFound();
-            }
+            return Ok(userAll);
         }
 
         // GET: api/User/5
@@ -56,7 +49,6 @@ namespace APIRest.Controllers
             UserDto user;
             user = await _getUserService.GetUserById(id);
             return Ok(user);
-            //return NotFound();
 
 
         }
