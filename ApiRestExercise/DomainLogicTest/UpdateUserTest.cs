@@ -28,6 +28,7 @@ namespace DomainLogicTest
 
         }
         [TestMethod]
+        [TestCategory("Logic")]
         public void UpdateUser_Test()
         {
             UserDto userToUpdate = new UserDto
@@ -42,7 +43,8 @@ namespace DomainLogicTest
             Assert.IsTrue(hasError == false);
         }
         [TestMethod]
-        [ExpectedException(typeof(BusinessException))]
+        [ExpectedException(typeof(BusinessException), "El usuario debe ser mayor de 18 años.")]
+        [TestCategory("Logic")]
         public void UpdateUser_HasNotLegalAge_Test()
         {
             UserDto userToAdd = new UserDto
@@ -54,7 +56,8 @@ namespace DomainLogicTest
             updateUserlogic.ValidationsToUpdate(userAll.AsQueryable(), userToAdd);
         }
         [TestMethod]
-        [ExpectedException(typeof(BusinessException))]
+        [ExpectedException(typeof(BusinessException), "El nombre de usuario ya existe.")]
+        [TestCategory("Logic")]
         public void UpdateUser_ReturnExceptionNameRepeat_Test()
         {
             UserDto userToUpdate = new UserDto

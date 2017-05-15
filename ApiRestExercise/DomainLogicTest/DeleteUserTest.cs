@@ -29,6 +29,7 @@ namespace DomainLogicTest
         }
 
         [TestMethod]
+        [TestCategory("Logic")]
         public void DeleteUser_Test()
         {
             UserDto userToUpdate = new UserDto

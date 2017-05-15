@@ -113,5 +113,14 @@ namespace CrossCutting.Resources {
                 return ResourceManager.GetString("ExceptionUserNotFound", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to El usuario no ha sido informado..
+        /// </summary>
+        public static string ExceptionUserNull {
+            get {
+                return ResourceManager.GetString("ExceptionUserNull", resourceCulture);
+            }
+        }
     }
 }

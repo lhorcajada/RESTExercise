@@ -1,4 +1,5 @@
 ﻿using ApplicationCore.DTOs;
+using CrossCutting.Exceptions;
 using CrossCutting.Resources;
 using DomainCore.Logic.UserLogic;
 using DomainEntities;
@@ -23,6 +24,8 @@ namespace DomainLogic.Logic.UserLogic
 
         public void ValidationsToAdd(IQueryable<User> userAll, UserDto user)
         {
+            if (user == null)
+                throw new BusinessException(Resource.ExceptionUserNull);
             _userRules.ApplyRules(userAll, user);
 
 

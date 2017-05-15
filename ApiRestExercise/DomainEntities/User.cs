@@ -12,5 +12,8 @@ namespace DomainEntities
         public string Name { get; set; }
         [DataType(DataType.DateTime, ErrorMessageResourceName = "ErrorDataTimeValidated", ErrorMessageResourceType = typeof(Resource))]
         public DateTime BirthDate { get; set; }
+
+        [StringLength(120, ErrorMessageResourceName = "ErrorUserNameValidated", ErrorMessageResourceType = typeof(Resource))]
+        public string LastName { get; set; }
     }
 }

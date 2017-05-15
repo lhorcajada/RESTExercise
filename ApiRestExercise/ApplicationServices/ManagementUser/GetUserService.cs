@@ -16,18 +16,15 @@ namespace ApplicationServices.ManagementUser
     public class GetUserService : IGetUserService
     {
 
-        private readonly IUnitOfWork _uow;
         private readonly IUserRepository _userRepository;
         private readonly IGetUserLogic _userLogic;
         public GetUserService(
-            IUnitOfWork uow,
             IUserRepository userRepository,
             IGetUserLogic userLogic
             )
         {
-            if (uow == null || userRepository == null || userLogic == null)
+            if (userRepository == null || userLogic == null)
                 throw new ArgumentNullException(Resource.ExceptionNullObject);
-            _uow = uow;
             _userRepository = userRepository;
             _userLogic = userLogic;
         }

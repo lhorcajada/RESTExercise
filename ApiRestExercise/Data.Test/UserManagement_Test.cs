@@ -22,6 +22,8 @@ namespace Data.Test
         }
 
         [TestMethod]
+        [TestCategory("Data")]
+
         public void AddAndDeleteUserThatNotExists_Test()
         {
             IUserRepository userRepository;
@@ -40,6 +42,7 @@ namespace Data.Test
 
 
         [TestMethod]
+        [TestCategory("Data")]
         public void UpdateUserThatNotExists_Test()
         {
             IUserRepository userRepository;

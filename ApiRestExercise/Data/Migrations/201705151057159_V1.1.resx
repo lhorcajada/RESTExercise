@@ -117,25 +117,10 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="ErrorDataTimeValidated" xml:space="preserve">
-    <value>Debe introducir una fecha válida.</value>
+  <data name="Target" xml:space="preserve">
+    <value>H4sIAAAAAAAEAM1X227bOBB9X6D/QPA5NWPnpRvIKVInKYKNk6BK805LY5soRWpJKrC/bR/2k/oLO9Tdkq9BsSgCBNJo5syZ4Vzon//8G3xeJZK8gbFCqzEdDs4pARXpWKjFmGZu/vET/Xz14Y/gNk5W5LXSu/B6aKnsmC6dSy8Zs9ESEm4HiYiMtnruBpFOGI81G52f/8mGQwYIQRGLkOBbppxIIH/B14lWEaQu43KqY5C2lOOXMEcljzwBm/IIxvSGOz7I1Si5loIjgxDknBKulHbcIb/L7xZCZ7RahCkKuHxZp4B6cy4tlLwvG/VjQzgf+RBYY1hBRZl1OjkRcHhR5oR1zd+VWVrnDLN2i9l1ax91nrkxxYQYSrqOLifSeCVMKoqFys0E2IFXPyObwrP69LFI/N8ZmWTSZQbGCjJnuDwjz9lMiugvWL/oH6DGKpOyzQuZ4bcNAYqejU7BuPU3mJds72NK2KYd6xrWZi2bIpZ75S5GlDyicz6TUB97K+7QaQNfQYHhDuJn7hwY5TEgT1zPe8eX/195wzrDVqFkylcPoBZuOaafsDfuxAriSlAS+K4ENhbaOJPBIR9fhHFLrPXakX9+Ed5xL7L9SA/cugOMh6PTKQesqbJ+7WFHOyweMCWJ2xWYSFjwcli5LbWINVeWoy3dbUZV4IbgWiVtKWlIFHNgUJT6NqY1p2a8sGK+VHOI7RhEwZSnKSatNZhKCQmLqTT5GJ7etkmBwSK7pXtrtrUnLFq+gM5XdI1M74Sxzk/GGffHNomTnlr3BHZkt/LWTnK3Y5ucV9r+ubBoxnNxEh3bJnN3GEyC/ZbHBbX/clb1zPJdwCU3W/p+omWWqF2zY5910Rdt+0JyPEKrT9swLfHxWE2ntqEaaR8pYJ1sdo+K9c6qM1e7B7+vb7oqtfe6fzp9EpQ1e3ir94q4UKEEU/QmYl/A4do6SAZ5gYV/y4kUGG+jMOVKzMG6YvVQXLCjzgXh91nWzNpYHrGx//fdKXxGD27HExdQe/moN26iJTe9hdlgvms7xvjsfsV23Eow34/7GJ62DPsT+/Cq27npikbBDMw0xlAQLHfjO5dgv2kD1r6wBzdgxaKB8Nd3BZHvhga00rlXc12lHCNqM6pUOicyBcfxOPm1cWLOI4efI7A2v7O8cpn520Qyg/hePWUuzdy1tZDM5MatLWD7/eebfpNz8JT6N/srQkCawlfkk/qSCRnXvO/6FbkLwtdI2YPICu9sCLdY10iPWh0JVKbvBlJQvoNfIEklgtknFfI3eA83LK8HWPBoXc3e3SCHD2Iz7cGN4AvDE1tiNPb+Ryjzv0Kv/gOUSVT7tw4AAA==</value>
   </data>
-  <data name="ErrorUserNameValidated" xml:space="preserve">
-    <value>El número de caracteres del nombre debe estar comprendido entre 8 y 80.</value>
-  </data>
-  <data name="ExceptionNullObject" xml:space="preserve">
-    <value>El contenedor de dependencias no ha creado el objeto.</value>
-  </data>
-  <data name="ExceptionUserMustBeLegalAge" xml:space="preserve">
-    <value>El usuario debe ser mayor de 18 años.</value>
-  </data>
-  <data name="ExceptionUserNameNoRepeat" xml:space="preserve">
-    <value>El nombre de usuario ya existe.</value>
-  </data>
-  <data name="ExceptionUserNotFound" xml:space="preserve">
-    <value>Usuario no encontrado con ese código.</value>
-  </data>
-  <data name="ExceptionUserNull" xml:space="preserve">
-    <value>El usuario no ha sido informado.</value>
+  <data name="DefaultSchema" xml:space="preserve">
+    <value>dbo</value>
   </data>
 </root>
