@@ -38,7 +38,6 @@ namespace APIRestTest
         IUpdateUserService _updateUserService;
         IDeleteUserService _deleteUserService;
         IGetUserService _getUserService;
-        UserDto _userToAdd;
 
         [TestInitialize]
         public void Initialize()
@@ -101,6 +100,7 @@ namespace APIRestTest
 
         [TestMethod]
         [ExpectedException(typeof(BusinessException), "Usuario no encontrado con ese código.")]
+        [TestCategory("UnitTestUserController")]
         public async Task GetReturnsNotFound()
         {
             // Arrange
@@ -118,6 +118,7 @@ namespace APIRestTest
 
         }
         [TestMethod]
+        [TestCategory("UnitTestUserController")]
         public async Task GetReturnsUserWithSameId()
         {
             // Arrange
@@ -145,6 +146,7 @@ namespace APIRestTest
 
         }
         [TestMethod]
+        [TestCategory("UnitTestUserController")]
         public async Task PostMethodSetsLocationHeader()
         {
             // Arrange
@@ -172,6 +174,54 @@ namespace APIRestTest
 
         }
         [TestMethod]
+        [ExpectedException(typeof(BusinessException), "El nombre de usuario ya existe.")]
+        [TestCategory("UnitTestUserController")]
+        public async Task PostReturnsThrowExceptionRepeatName()
+        {
+            // Arrange
+            UserDto userDto = new UserDto
+            {
+                Id = 1,
+                Name = "Prueba",
+                BirthDate = new DateTime(1945, 2, 5)
+            };
+            _addUserService.Stub(s => s.AddUser(userDto))
+                .Throw(new BusinessException(Resource.ExceptionUserNameNoRepeat));
+            var controller = new UserController(
+                _addUserService,
+                _updateUserService,
+                _deleteUserService,
+                _getUserService);
+
+            // Act
+            IHttpActionResult actionResult = await controller.Post(userDto);
+        }
+        [TestMethod]
+        [ExpectedException(typeof(BusinessException), "El usuario debe ser mayor de 18 años.")]
+        [TestCategory("UnitTestUserController")]
+        public async Task PostReturnsThrowExceptionUserHasNotLegalAge()
+        {
+            // Arrange
+            UserDto userDto = new UserDto
+            {
+                Id = 1,
+                Name = "Prueba",
+                BirthDate = new DateTime(1945, 2, 5)
+            };
+            _addUserService.Stub(s => s.AddUser(userDto))
+                .Throw(new BusinessException(Resource.ExceptionUserMustBeLegalAge));
+            var controller = new UserController(
+                _addUserService,
+                _updateUserService,
+                _deleteUserService,
+                _getUserService);
+
+            // Act
+            IHttpActionResult actionResult = await controller.Post(userDto);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTestUserController")]
         public async Task PutReturnsContentResult()
         {
             // Arrange
@@ -200,6 +250,7 @@ namespace APIRestTest
         }
         [TestMethod]
         [ExpectedException(typeof(BusinessException), "El nombre de usuario ya existe.")]
+        [TestCategory("UnitTestUserController")]
         public async Task PutReturnsThrowExceptionRepeatName()
         {
             // Arrange
@@ -222,6 +273,7 @@ namespace APIRestTest
         }
         [TestMethod]
         [ExpectedException(typeof(BusinessException), "El usuario debe ser mayor de 18 años.")]
+        [TestCategory("UnitTestUserController")]
         public async Task PutReturnsThrowExceptionUserHasNotLegalAge()
         {
             // Arrange
@@ -244,6 +296,7 @@ namespace APIRestTest
         }
 
         [TestMethod]
+        [TestCategory("UnitTestUserController")]
         public async Task DeleteReturnsContentResult()
         {
             // Arrange
