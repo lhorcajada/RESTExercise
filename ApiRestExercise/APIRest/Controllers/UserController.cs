@@ -60,7 +60,7 @@ namespace APIRest.Controllers
         {
             await _addUserService.AddUser(user);
             var userAll = await _getUserService.GetUserAll();
-            var lastUser = userAll.Last();
+            var lastUser = userAll.OrderBy(u=> u.Id).Last();
             return CreatedAtRoute("GetById", new { id = lastUser.Id }, lastUser);
         }
 
@@ -71,7 +71,7 @@ namespace APIRest.Controllers
         {
             await _updateUserService.UpdateUser(user);
             var userAll = await _getUserService.GetUserAll();
-            var lastUser = userAll.Last();
+            var lastUser = userAll.OrderBy(u => u.Id).Last();
             return Ok(user);
         }
 
