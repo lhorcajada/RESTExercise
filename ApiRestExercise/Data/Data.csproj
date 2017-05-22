@@ -93,6 +93,10 @@
     <Compile Include="Migrations\201705221046081_V1.9.Designer.cs">
       <DependentUpon>201705221046081_V1.9.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201705221119506_V2.0.cs" />
+    <Compile Include="Migrations\201705221119506_V2.0.Designer.cs">
+      <DependentUpon>201705221119506_V2.0.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\ExerciseContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -130,6 +134,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201705221046081_V1.9.resx">
       <DependentUpon>201705221046081_V1.9.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705221119506_V2.0.resx">
+      <DependentUpon>201705221119506_V2.0.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

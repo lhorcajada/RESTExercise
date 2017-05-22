@@ -10,12 +10,34 @@ using System.Threading.Tasks;
 
 namespace DomainEntities
 {
-    public class UserAddress
+    public class UserAddress:ValueObject
     {
-        public string Street { get; set; }
-        public string PostalCode { get; set; }
-        public string Province { get; set; }
-        public string Country { get; set; }
+        public UserAddress(string street, string postalCode, string province, string country)
+        {
+            Street = street;
+            PostalCode = postalCode;
+            Province = province;
+            Country = country;
 
+        }
+        public UserAddress()
+        {
+
+        }
+        public string Street { get; private set; }
+        public string PostalCode { get; private set; }
+        public string Province { get; private set; }
+        public string Country { get; private set; }
+        protected override IEnumerable<object> GetEqualityComponents()
+        {
+            yield return Street;
+            yield return Province;
+            yield return Country;
+            yield return PostalCode;
+        }
+        public override string ToString()
+        {
+            return string.Format("{0} {1}-{2} {3}", Street, PostalCode, Province, Country);
+        }
     }
 }

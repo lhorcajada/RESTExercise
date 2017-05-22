@@ -65,7 +65,7 @@ namespace Data.Test
             {
                 Name = "Nombre del primer usuario",
                 BirthDate = new DateTime(1994, 5, 12),
-                Address = new UserAddress()
+                Address = new UserAddress("Mi calle","","","")
             };
         }
         private void DeleteUser(IUserRepository userRepository, User userToDelete)
