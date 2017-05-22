@@ -15,7 +15,6 @@ namespace DomainEntities
         public DateTime BirthDate { get; set; }
 
         public UserAddress Address { get; set; }
-  
-
+        public UserAddress DeliveryAddress { get; set; }
     }
 }

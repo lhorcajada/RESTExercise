@@ -22,7 +22,8 @@ namespace ApplicationServices.ManagementUser
                 Id = userDto.Id,
                 Name = userDto.Name,
                 BirthDate = userDto.BirthDate,
-                Address = new UserAddress(userDto.Street, userDto.PostalCode, userDto.Province, userDto.Country)
+                Address = new UserAddress(userDto.Street, userDto.PostalCode, userDto.Province, userDto.Country),
+                DeliveryAddress = new UserAddress("","","","")
 
             };
         }

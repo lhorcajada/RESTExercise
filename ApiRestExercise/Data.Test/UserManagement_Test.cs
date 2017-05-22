@@ -39,6 +39,23 @@ namespace Data.Test
             DeleteUser(userRepository, userInserted);
 
         }
+        [TestMethod]
+        [TestCategory("Data")]
+
+        public void AddAndDeleteUserWithDeliveryAddressThatNotExists_Test()
+        {
+            IUserRepository userRepository;
+            User userToAdd;
+            int commitResult;
+            AddUserWithDeliveryAddress(out userRepository, out userToAdd, out commitResult);
+
+            Assert.IsTrue(commitResult > 0);
+
+            User userInserted = GetUserByNameWithTracking(userRepository, userToAdd);
+            Assert.AreEqual(userInserted.Name, userToAdd.Name);
+            DeleteUser(userRepository, userInserted);
+
+        }
 
 
 
@@ -65,7 +82,18 @@ namespace Data.Test
             {
                 Name = "Nombre del primer usuario",
                 BirthDate = new DateTime(1994, 5, 12),
-                Address = new UserAddress("Mi calle","","","")
+                Address = new UserAddress("Mi calle","","",""),
+                DeliveryAddress = new UserAddress("", "", "", "")
+            };
+        }
+        public User CreateUserFictitiusWithDeliveryAddress()
+        {
+            return new User
+            {
+                Name = "Nombre del primer usuario",
+                BirthDate = new DateTime(1994, 5, 12),
+                Address = new UserAddress("Mi calle", "", "", ""),
+                DeliveryAddress = new UserAddress("Mi calle de entrega","","","") 
             };
         }
         private void DeleteUser(IUserRepository userRepository, User userToDelete)
@@ -87,6 +115,14 @@ namespace Data.Test
         {
             userRepository = new UserRepository(_dataFactory);
             userToAdd = CreateUserFictitius();
+            userRepository.Add(userToAdd);
+            commitResult = _uow.Commit();
+
+        }
+        private void AddUserWithDeliveryAddress(out IUserRepository userRepository, out User userToAdd, out int commitResult)
+        {
+            userRepository = new UserRepository(_dataFactory);
+            userToAdd = CreateUserFictitiusWithDeliveryAddress();
             userRepository.Add(userToAdd);
             commitResult = _uow.Commit();
 
