@@ -5,6 +5,7 @@ using Data;
 using Data.Repository;
 using DomainEntities;
 using System.Linq;
+using System.Data.Entity.Validation;
 
 namespace Data.Test
 {
@@ -63,7 +64,8 @@ namespace Data.Test
             return new User
             {
                 Name = "Nombre del primer usuario",
-                BirthDate = new DateTime(1994, 5, 12)
+                BirthDate = new DateTime(1994, 5, 12),
+                Address = new UserAddress()
             };
         }
         private void DeleteUser(IUserRepository userRepository, User userToDelete)
@@ -86,8 +88,8 @@ namespace Data.Test
             userRepository = new UserRepository(_dataFactory);
             userToAdd = CreateUserFictitius();
             userRepository.Add(userToAdd);
-
             commitResult = _uow.Commit();
+
         }
     }
 }

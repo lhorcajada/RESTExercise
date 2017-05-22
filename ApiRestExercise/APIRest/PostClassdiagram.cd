@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
+  <Class Name="ApplicationServices.ManagementUser.AddUserService">
+    <Position X="0.5" Y="3" Width="6" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="ApplicationCore.DTOs.UserDto">
+    <Position X="7.75" Y="0.75" Width="2.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="DomainEntities.User">
+    <Position X="6.5" Y="7.25" Width="4.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="DomainLogic.Logic.UserLogic.AddUserLogic">
+    <Position X="0.5" Y="4.75" Width="4" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="DomainLogic.Rules.UserRules.AddUserRule">
+    <Position X="0.5" Y="7" Width="4.25" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="DomainEntities.UserAddress">
+    <Position X="6.5" Y="4.5" Width="5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="APIRest.Controllers.AddUserController">
+    <Position X="0.5" Y="0.5" Width="5.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAACAAAAAIAAAAAAAAIAAA=</HashCode>
+      <FileName>Controllers\AddUserController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

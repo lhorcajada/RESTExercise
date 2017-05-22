@@ -103,7 +103,10 @@
   <ItemGroup>
     <Compile Include="App_Start\AutofacContainerConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="Controllers\UserController.cs" />
+    <Compile Include="Controllers\AddUserController.cs" />
+    <Compile Include="Controllers\UpdateUserController.cs" />
+    <Compile Include="Controllers\DeleteUserController.cs" />
+    <Compile Include="Controllers\GetUserController.cs" />
     <Compile Include="Exceptions\ExceptionsHandlerAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -112,6 +115,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
+    <Content Include="PostClassdiagram.cd" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

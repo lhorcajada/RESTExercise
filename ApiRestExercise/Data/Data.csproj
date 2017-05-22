@@ -65,6 +65,34 @@
     <Compile Include="Migrations\201705151320397_V1.2.Designer.cs">
       <DependentUpon>201705151320397_V1.2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201705190944302_V1.3.cs" />
+    <Compile Include="Migrations\201705190944302_V1.3.Designer.cs">
+      <DependentUpon>201705190944302_V1.3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201705190959580_V1.4.cs" />
+    <Compile Include="Migrations\201705190959580_V1.4.Designer.cs">
+      <DependentUpon>201705190959580_V1.4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201705191011181_V1.5.cs" />
+    <Compile Include="Migrations\201705191011181_V1.5.Designer.cs">
+      <DependentUpon>201705191011181_V1.5.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201705191247588_V1.6.cs" />
+    <Compile Include="Migrations\201705191247588_V1.6.Designer.cs">
+      <DependentUpon>201705191247588_V1.6.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201705191256277_V1.7.cs" />
+    <Compile Include="Migrations\201705191256277_V1.7.Designer.cs">
+      <DependentUpon>201705191256277_V1.7.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201705221040301_V1.8.cs" />
+    <Compile Include="Migrations\201705221040301_V1.8.Designer.cs">
+      <DependentUpon>201705221040301_V1.8.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201705221046081_V1.9.cs" />
+    <Compile Include="Migrations\201705221046081_V1.9.Designer.cs">
+      <DependentUpon>201705221046081_V1.9.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\ExerciseContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -81,6 +109,27 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201705151320397_V1.2.resx">
       <DependentUpon>201705151320397_V1.2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705190944302_V1.3.resx">
+      <DependentUpon>201705190944302_V1.3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705190959580_V1.4.resx">
+      <DependentUpon>201705190959580_V1.4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705191011181_V1.5.resx">
+      <DependentUpon>201705191011181_V1.5.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705191247588_V1.6.resx">
+      <DependentUpon>201705191247588_V1.6.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705191256277_V1.7.resx">
+      <DependentUpon>201705191256277_V1.7.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705221040301_V1.8.resx">
+      <DependentUpon>201705221040301_V1.8.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705221046081_V1.9.resx">
+      <DependentUpon>201705221046081_V1.9.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
