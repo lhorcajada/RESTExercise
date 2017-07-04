@@ -15,7 +15,8 @@ namespace Data.Model
 
 
         public virtual DbSet<User> Users { get; set; }
+
     }
 
-  
+
 }

@@ -66,7 +66,7 @@ namespace ApplicationServiceTest
             _userToAdd = new UserDto
             {
                 Name = "Yo mismo",
-                BirthDate = new DateTime(1973, 3, 7)
+                BirthDate = new DateTime(1973, 3, 7),                
             };
             await _addUserService.AddUser(_userToAdd);
             _getUserService = new GetUserService(_userRepository, _getUserLogic);

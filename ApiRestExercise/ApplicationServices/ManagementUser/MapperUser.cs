@@ -9,7 +9,7 @@ namespace ApplicationServices.ManagementUser
     /// Clase que se encarga de los mapeos entre entidades y dtos.
     /// </summary>
     public class MapperUser
-    { 
+    {
         /// <summary>
         /// Mapea un objeto DTO a un nuevo objeto entidad
         /// </summary>
@@ -21,7 +21,10 @@ namespace ApplicationServices.ManagementUser
             {
                 Id = userDto.Id,
                 Name = userDto.Name,
-                BirthDate = userDto.BirthDate
+                BirthDate = userDto.BirthDate,
+                Address = new UserAddress(userDto.Street, userDto.PostalCode, userDto.Province, userDto.Country),
+                DeliveryAddress = new UserAddress("","","","")
+
             };
         }
         /// <summary>
@@ -35,7 +38,11 @@ namespace ApplicationServices.ManagementUser
             {
                 Id = user.Id,
                 Name = user.Name,
-                BirthDate = user.BirthDate
+                BirthDate = user.BirthDate,
+                Street = (user.Address != null) ? user.Address.Street : string.Empty,
+                Province = (user.Address != null) ? user.Address.Province : string.Empty,
+                PostalCode = (user.Address != null) ? user.Address.PostalCode : string.Empty,
+                Country = (user.Address != null) ? user.Address.Country : string.Empty
 
             };
         }
@@ -47,13 +54,17 @@ namespace ApplicationServices.ManagementUser
         internal static IEnumerable<UserDto> MapFromEntityListToDtoList(List<User> userAll)
         {
             List<UserDto> usersDto = new List<UserDto>();
-            foreach(var userItem in userAll)
+            foreach (var userItem in userAll)
             {
                 usersDto.Add(new UserDto
                 {
                     Id = userItem.Id,
                     BirthDate = userItem.BirthDate,
-                    Name = userItem.Name
+                    Name = userItem.Name,
+                    Street = (userItem.Address != null) ? userItem.Address.Street : string.Empty,
+                    Province = (userItem.Address != null) ? userItem.Address.Province : string.Empty,
+                    PostalCode = (userItem.Address != null) ? userItem.Address.PostalCode : string.Empty,
+                    Country = (userItem.Address != null) ? userItem.Address.Country : string.Empty
                 });
             }
             return usersDto.AsEnumerable();

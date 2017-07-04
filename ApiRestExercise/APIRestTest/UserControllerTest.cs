@@ -58,13 +58,16 @@ namespace APIRestTest
         }
         private List<User> GetUserAll()
         {
+
             List<User> users = new List<User>
             {
                 new User
                 {
                     Id = 1,
                     Name = "Nombre 1",
-                    BirthDate = new DateTime(1973, 5,3)
+                    BirthDate = new DateTime(1973, 5,3),
+                    
+                    
                 },
                 new User
                 {
@@ -107,10 +110,7 @@ namespace APIRestTest
             _getUserService.Stub(s => s.GetUserById(45))
                 .Throw(new BusinessException(Resource.ExceptionUserNotFound));
 
-            var controller = new UserController(
-                _addUserService,
-                _updateUserService,
-                _deleteUserService,
+            var controller = new GetUserController(
                 _getUserService);
 
             // Act
@@ -128,10 +128,7 @@ namespace APIRestTest
                 .Return(Task.FromResult<UserDto>(new UserDto { Id = 45 }));
 
 
-            var controller = new UserController(
-                _addUserService,
-                _updateUserService,
-                _deleteUserService,
+            var controller = new GetUserController(
                 _getUserService);
 
             // Act
@@ -157,11 +154,9 @@ namespace APIRestTest
             };
             _addUserService.Stub(s => s.AddUser(userDto)).Return(Task.CompletedTask);
             _getUserService.Stub(g => g.GetUserAll()).Return(Task.FromResult<IEnumerable<UserDto>>(GetUserDtoAll().AsEnumerable()));
-            var controller = new UserController(
+            var controller = new AddUserController(
                 _addUserService,
-                _updateUserService,
-                _deleteUserService,
-                _getUserService);
+                 _getUserService);
 
             // Act
             IHttpActionResult actionResult = await controller.Post(userDto);
@@ -187,10 +182,8 @@ namespace APIRestTest
             };
             _addUserService.Stub(s => s.AddUser(userDto))
                 .Throw(new BusinessException(Resource.ExceptionUserNameNoRepeat));
-            var controller = new UserController(
+            var controller = new AddUserController(
                 _addUserService,
-                _updateUserService,
-                _deleteUserService,
                 _getUserService);
 
             // Act
@@ -210,10 +203,8 @@ namespace APIRestTest
             };
             _addUserService.Stub(s => s.AddUser(userDto))
                 .Throw(new BusinessException(Resource.ExceptionUserMustBeLegalAge));
-            var controller = new UserController(
+            var controller = new AddUserController(
                 _addUserService,
-                _updateUserService,
-                _deleteUserService,
                 _getUserService);
 
             // Act
@@ -233,10 +224,8 @@ namespace APIRestTest
             };
             _updateUserService.Stub(s => s.UpdateUser(userDto)).Return(Task.CompletedTask);
             _getUserService.Stub(g => g.GetUserAll()).Return(Task.FromResult<IEnumerable<UserDto>>(GetUserDtoAll().AsEnumerable()));
-            var controller = new UserController(
-                _addUserService,
+            var controller = new UpdateUserController(
                 _updateUserService,
-                _deleteUserService,
                 _getUserService);
 
             // Act
@@ -262,10 +251,8 @@ namespace APIRestTest
             };
             _updateUserService.Stub(s => s.UpdateUser(userDto))
                 .Throw(new BusinessException(Resource.ExceptionUserNameNoRepeat));
-            var controller = new UserController(
-                _addUserService,
+            var controller = new UpdateUserController(
                 _updateUserService,
-                _deleteUserService,
                 _getUserService);
 
             // Act
@@ -285,10 +272,8 @@ namespace APIRestTest
             };
             _updateUserService.Stub(s => s.UpdateUser(userDto))
                 .Throw(new BusinessException(Resource.ExceptionUserMustBeLegalAge));
-            var controller = new UserController(
-                _addUserService,
+            var controller = new UpdateUserController(
                 _updateUserService,
-                _deleteUserService,
                 _getUserService);
 
             // Act
@@ -307,9 +292,7 @@ namespace APIRestTest
                 BirthDate = new DateTime(1945, 2, 5)
             };
             _deleteUserService.Stub(s => s.DeleteUser(1)).Return(Task.CompletedTask);
-            var controller = new UserController(
-                _addUserService,
-                _updateUserService,
+            var controller = new DeleteUserController(
                 _deleteUserService,
                 _getUserService);
 
