@@ -1,9 +1,12 @@
-﻿using System.Web.Http;
+﻿using System.Diagnostics.CodeAnalysis;
+using System.Web.Http;
 
 namespace APIRest
 {
     public static class WebApiConfig
     {
+        [ExcludeFromCodeCoverage]
+
         public static void Register(HttpConfiguration config)
         {
             // Web API configuration and services

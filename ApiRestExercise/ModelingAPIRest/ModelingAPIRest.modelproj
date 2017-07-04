@@ -33,4 +33,18 @@
       <SubType>Content</SubType>
     </Content>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\APIRest\APIRest.csproj">
+      <Name>APIRest</Name>
+      <Project>{e3fe3692-a1f0-4688-bda7-0ff10851a380}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\ApplicationCore\ApplicationCore.csproj">
+      <Name>ApplicationCore</Name>
+      <Project>{83da27c3-f4f0-435c-a5ce-3f312028eb4b}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\ApplicationServices\ApplicationServices.csproj">
+      <Name>ApplicationServices</Name>
+      <Project>{1001c5a5-4465-4fb8-85fe-6012153da1c0}</Project>
+    </ProjectReference>
+  </ItemGroup>
 </Project>

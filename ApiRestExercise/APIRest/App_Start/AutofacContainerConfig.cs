@@ -9,9 +9,11 @@ using DomainLogic.Logic.UserLogic;
 using ApplicationServices.ManagementUser;
 using System.Reflection;
 using System.Web.Http;
+using System.Diagnostics.CodeAnalysis;
 
 namespace APIRest
 {
+    [ExcludeFromCodeCoverage]
     public static class AutofacContainerConfig
     {
         public static void Configure()

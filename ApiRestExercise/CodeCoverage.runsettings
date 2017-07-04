@@ -36,6 +36,7 @@ Included items must then not match any entries in the exclude list to remain inc
 								<ModulePath>.*core*\.dll$</ModulePath>
 								<ModulePath>.*Test\.dll$</ModulePath>
 								<ModulePath>.*Resources\.dll$</ModulePath>
+								<ModulePath>.*Migrations\.dll$</ModulePath>
 								<ModulePath>.*\.g.cs$</ModulePath>
 							</Exclude>
 						</ModulePaths>

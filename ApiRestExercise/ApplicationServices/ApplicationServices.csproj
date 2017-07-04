@@ -65,10 +65,6 @@
       <Project>{9D2F7B0B-E504-4C27-9A09-490245588A88}</Project>
       <Name>CrossCutting</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Data\Data.csproj">
-      <Project>{332B95AF-B691-40B8-A679-B8ED6FFE9882}</Project>
-      <Name>Data</Name>
-    </ProjectReference>
     <ProjectReference Include="..\DomainCore\DomainCore.csproj">
       <Project>{96D47409-563A-4393-BD41-03F48E018828}</Project>
       <Name>DomainCore</Name>
@@ -85,6 +81,10 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Analyzer Include="..\packages\Microsoft.DependencyValidation.Analyzers.0.9.0\analyzers\dotnet\cs\Microsoft.DependencyValidation.Analyzers.resources.dll" />
+    <Analyzer Include="..\packages\Microsoft.DependencyValidation.Analyzers.0.9.0\analyzers\dotnet\Microsoft.DependencyValidation.Analyzers.dll" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
